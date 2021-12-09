@@ -22,7 +22,7 @@ export class MineCoinsComponent implements OnInit {
       let currentVal = this._httpService.getCurrentValue();
       this._httpService.increaseShintoCoinValue(1);
       this._httpService.AddCoin(1);
-      this._httpService.generateTran('Mined',1,currentVal);
+      this._httpService.generateTran(0,1,currentVal); //"Mine" changed to value 0
     }else{
       console.log('answer is wrong');
     }

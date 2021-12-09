@@ -32,7 +32,7 @@ export class SellCoinsComponent implements OnInit {
     if(this.userInput <= currentCoin ){
     this._httpService.decreaseShintoCoinValue(this.userInput);
     this._httpService.RemoveCoin(this.userInput);
-    this._httpService.generateTran('Sold',this.userInput,currentVal);
+    this._httpService.generateTran(0,this.userInput,currentVal); //"sold" changed to value 0
     this.coinOwned = this._httpService.getBalance();
     this.currentVal = this._httpService.getCurrentValue();
     console.log('how much I have: ',this.coinOwned);

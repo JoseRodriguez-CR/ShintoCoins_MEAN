@@ -54,15 +54,17 @@ export class HttpService {
     }
     return "transaction not found";  
   }
-  addTransaction(trans){  //action variable need to be checked
-    return this.Transctions.push(trans);  //action variable need to be checked
+  addTransaction(){  //trans argument need to be checked, so it was remove 
+    return this.Transctions.push();  //trans argument need to be checked, so it was remove 
   }
   generateTran(action :number,amount:number,value:number){  //action variable need to be checked
     let randID = Math.floor(Math.random()*9999);
     let newTran = {id:randID, Action: action, Amount: amount, Value: value};
     console.log(newTran);
-    return this.addTransaction(newTran);
+    return this.addTransaction();//newTran argument need to be checked, so it was remove 
   }
+
+  
 
   getAllTransactions(){
     return this.Transctions;
